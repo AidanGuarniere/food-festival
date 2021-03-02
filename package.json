@@ -1,0 +1,25 @@
+{
+  "name": "food-festival",
+  "version": "1.0.0",
+  "description": "A PWA designed for a culinary event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AidanGuarniere/food-festival.git"
+  },
+  "author": "Aidan Guarniere",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AidanGuarniere/food-festival/issues"
+  },
+  "homepage": "https://github.com/AidanGuarniere/food-festival#readme",
+  "devDependencies": {
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0"
+  }
+}
