@@ -10,6 +10,29 @@ module.exports = {
     schedule: "./assets/js/schedule.js",
     tickets: "./assets/js/tickets.js",
   },
+  module: {
+    rules: [
+      {
+        test: /\.jpg$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name (file) {
+                return "[path][name].[ext]"
+              },
+              publicPath: function(url) {
+                return url.replace("../", "/assets/")
+              }
+            }  
+          }
+        ]
+      },
+      {
+        loader: 'image-webpack-loader'
+      }
+    ],
+  },
   output: {
     path: path.join(__dirname + "/dist"),
     filename: "[name].bundle.js",

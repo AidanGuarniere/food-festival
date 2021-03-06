@@ -1,8 +1,9 @@
 // requirements 
 require("bootstrap");
 const createEl = require("./dom-methods");
+const createLoremIpsum = require("./helpers")
 
-$(event).ready(function () {
+$(document).ready(function () {
   const currentEvent = JSON.parse(localStorage.getItem("currentEvent")) || {
     title: "Title Placeholder",
     subtitle: "",

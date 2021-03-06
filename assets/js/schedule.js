@@ -1,13 +1,11 @@
-// requirements 
 require("bootstrap");
 const createEl = require("./dom-methods");
-
-$(schedule).ready(function () {
+const { createLoremIpsum, dateConverter } = require("./helpers");
+$(document).ready(function () {
   const date = new Date();
   const d = date.getDate();
   const m = date.getMonth();
   const y = date.getFullYear();
-
   function onEventClick(calEvent) {
     const start = dateConverter(calEvent.start);
     localStorage.setItem(
@@ -19,10 +17,8 @@ $(schedule).ready(function () {
         image: calEvent.image,
       })
     );
-
     window.location.href = "events.html";
   }
-
   const events = [
     {
       title: "Vegan Day",
@@ -90,9 +86,7 @@ $(schedule).ready(function () {
         "https://images.unsplash.com/photo-1534797258760-1bd2cc95a5bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80",
     },
   ];
-
   const pageEl = document.querySelector("#page");
-
   function createCards(events) {
     const cards = events.map((event) =>
       createEl(
@@ -109,7 +103,6 @@ $(schedule).ready(function () {
     );
     return cards;
   }
-
   const containerEl1 = createEl(
     "div",
     { class: "container mt-5" },
@@ -120,7 +113,6 @@ $(schedule).ready(function () {
       ...createCards(events.slice(0, 3))
     )
   );
-
   const containerEl2 = createEl(
     "div",
     { class: "container" },
@@ -131,7 +123,6 @@ $(schedule).ready(function () {
       ...createCards(events.slice(3, 6))
     )
   );
-
   const containerEl3 = createEl(
     "div",
     { class: "container" },
@@ -142,7 +133,6 @@ $(schedule).ready(function () {
       ...createCards(events.slice(6, 9))
     )
   );
-
   pageEl.appendChild(containerEl1);
   pageEl.appendChild(containerEl2);
   pageEl.appendChild(containerEl3);

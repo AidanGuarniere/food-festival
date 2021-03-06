@@ -2,7 +2,7 @@
 require("bootstrap");
 const createEl = require("./dom-methods");
 
-$(ticket).ready(function purchaseTicket() {
+$(document).ready(function purchaseTicket() {
     modalEl.removeChild(modalBodyEl);
     modalEl.removeChild(modalFooterEl);
 
